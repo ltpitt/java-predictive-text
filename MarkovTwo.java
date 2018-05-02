@@ -66,4 +66,4 @@ public class MarkovTwo {
         System.out.println(result);
     }
 
-}
+}  
