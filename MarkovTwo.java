@@ -26,9 +26,9 @@ public class MarkovTwo {
 
     public ArrayList<String> getFollows(String key) {
         ArrayList<String> follows = new ArrayList<String>();
-        for (int i = 0; i < myText.length() - 1; i++) {
-            if (key.equals(myText.substring(i, i + 1))) {
-                follows.add(myText.substring(i + 1, i + 2));
+        for (int i = 0; i < myText.length() -1; i++) {
+            if (key.equals(myText.substring(i,i+1))) {
+                follows.add(myText.substring(i+1, i+2));
             }
         }
         return follows;
@@ -51,7 +51,7 @@ public class MarkovTwo {
             index = myRandom.nextInt(follows.size());
             String next = follows.get(index);
             sb.append(next);
-            key = next;
+            key = key.substring(1) + next;
         }
 
         return sb.toString();
@@ -60,10 +60,10 @@ public class MarkovTwo {
     public static void main(String[] args) {
         System.out.println("Working Directory = " +
                 System.getProperty("user.dir"));
-        MarkovOne mo = new MarkovOne();
+        MarkovTwo mo = new MarkovTwo();
         mo.setTraining("saluti da davide");
         String result = mo.getRandomText(5);
         System.out.println(result);
     }
 
-}  
+}

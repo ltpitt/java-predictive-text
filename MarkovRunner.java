@@ -8,12 +8,27 @@
 
 import edu.duke.*;
 
+import java.util.ArrayList;
+
 public class MarkovRunner {
-    public void runMarkovZero() {
+
+	public void testGetFollows() {
+		MarkovOne markov = new MarkovOne();
+		markov.setTraining("this is a test yes this is a test.");
+		ArrayList<String> follows = markov.getFollows("t");
+		System.out.println("follows size:\n" + follows.size());
+		System.out.println("follows content:");
+		System.out.println(follows);
+
+	}
+
+	public void runMarkovZero() {
 		FileResource fr = new FileResource();
 		String st = fr.asString();
 		st = st.replace('\n', ' ');
-		MarkovZero markov = new MarkovZero();
+		//MarkovZero markov = new MarkovZero();
+		MarkovOne markov = new MarkovOne();
+		//MarkovTwo markov = new MarkovTwo();
 		markov.setTraining(st);
 		for(int k=0; k < 3; k++){
 			String text = markov.getRandomText(500);
@@ -40,7 +55,8 @@ public class MarkovRunner {
 		System.out.println("Working Directory = " +
 				System.getProperty("user.dir"));
 		MarkovRunner mr = new MarkovRunner();
-		mr.runMarkovZero();
+		//mr.runMarkovZero();
+		mr.testGetFollows();
 	}
 
 
