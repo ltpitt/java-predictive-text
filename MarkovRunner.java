@@ -15,14 +15,27 @@ public class MarkovRunner {
 	public void testGetFollows() {
 		MarkovOne markov = new MarkovOne();
 		markov.setTraining("this is a test yes this is a test.");
-		ArrayList<String> follows = markov.getFollows("t");
+		ArrayList<String> follows = markov.getFollows(".");
 		System.out.println("follows size:\n" + follows.size());
 		System.out.println("follows content:");
 		System.out.println(follows);
 
 	}
 
-	public void runMarkovZero() {
+	public void testGetFollowsWithFile() {
+        MarkovOne markov = new MarkovOne();
+        FileResource fr = new FileResource();
+        String st = fr.asString();
+        st = st.replace('\n', ' ');
+        markov.setTraining(st);
+        ArrayList<String> follows = markov.getFollows("t");
+        System.out.println("follows size:\n" + follows.size());
+        System.out.println("follows content:");
+        System.out.println(follows);
+
+    }
+
+    public void runMarkovZero() {
 		FileResource fr = new FileResource();
 		String st = fr.asString();
 		st = st.replace('\n', ' ');
@@ -56,7 +69,8 @@ public class MarkovRunner {
 				System.getProperty("user.dir"));
 		MarkovRunner mr = new MarkovRunner();
 		//mr.runMarkovZero();
-		mr.testGetFollows();
+		//mr.testGetFollows();
+        mr.testGetFollowsWithFile();
 	}
 
 
