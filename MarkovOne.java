@@ -32,8 +32,8 @@ public class MarkovOne {
         for (int i = 0; i < myText.length() - key.length(); i++) {
 
             if (key.equals(myText.substring(i, i + key.length()))){
-                System.out.println("Current key:\n" + key);
-                System.out.println("Current substring:\n" + myText.substring(i + key.length(), i + key.length() + 1));
+                //System.out.println("Current key:\n" + key);
+                //System.out.println("Current substring:\n" + myText.substring(i + key.length(), i + key.length() + 1));
                 follows.add(myText.substring(i + key.length(), i + key.length() + 1));
             }
         }
