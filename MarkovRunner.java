@@ -25,8 +25,9 @@ public class MarkovRunner {
     public void testGetFollowsWithFile() {
         //MarkovOne markov = new MarkovOne();
         //MarkovTwo markov = new MarkovTwo();
-        MarkovFour markov = new MarkovFour();
-        markov.setRandom(25);
+        //MarkovFour markov = new MarkovFour();
+        MarkovModel markov = new MarkovModel(6);
+        markov.setRandom(38);
         FileResource fr = new FileResource();
         String st = fr.asString();
         st = st.replace('\n', ' ');
