@@ -23,18 +23,19 @@ public class MarkovRunner {
     }
 
     public void testGetFollowsWithFile() {
+        //MarkovZero markov = new MarkovZero();
         //MarkovOne markov = new MarkovOne();
         //MarkovTwo markov = new MarkovTwo();
         //MarkovFour markov = new MarkovFour();
-        MarkovModel markov = new MarkovModel(6);
-        markov.setRandom(38);
+        MarkovModel markov = new MarkovModel(8);
+        markov.setRandom(365);
         FileResource fr = new FileResource();
         String st = fr.asString();
         st = st.replace('\n', ' ');
         markov.setTraining(st);
         String generatedText = markov.getRandomText(100);
         System.out.println(generatedText);
-        //ArrayList<String> follows = markov.getFollows("t");
+        //ArrayList<String> follows = markov.getFollows("th");
         //System.out.println("follows size:\n" + follows.size());
         //System.out.println("follows content:");
         //System.out.println(follows);
