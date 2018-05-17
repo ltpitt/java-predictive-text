@@ -8,7 +8,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MarkovFour {
+public class MarkovFour implements IMarkovModel {
     private String myText;
     private Random myRandom;
 

@@ -1,9 +1,9 @@
 
 /**
- * Write a description of interface IMarkovModel here.
+ * Interface for the MarkovModel.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Davide Nastri
+ * @version 5/16/2018
  */
 
 public interface IMarkovModel {

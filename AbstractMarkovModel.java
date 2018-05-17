@@ -1,9 +1,9 @@
 
 /**
- * Abstract class AbstractMarkovModel - write a description of the class here
+ * Abstract class AbstractMarkovModel, implements MarkovModel
  * 
- * @author (your name here)
- * @version (version number or date here)
+ * @author Davide Nastri
+ * @version 5/16/2018
  */
 
 import java.util.*;

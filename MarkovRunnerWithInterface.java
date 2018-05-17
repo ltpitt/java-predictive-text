@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class MarkovRunner here.
+ * This class is used to run a program to generate random text.
  * 
- * @author Duke Software
- * @version 1.0
+ * @author Davide Nastri
+ * @version 5/16/2018
  */
 
 import edu.duke.*; 
@@ -52,5 +52,14 @@ public class MarkovRunnerWithInterface {
 		}
 		System.out.println("\n----------------------------------");
 	}
-	
+
+	public static void main(String[] args) {
+		System.out.println("Working Directory = " +
+				System.getProperty("user.dir"));
+
+		MarkovRunnerWithInterface mr = new MarkovRunnerWithInterface();
+		mr.runMarkov();
+
+	}
+
 }

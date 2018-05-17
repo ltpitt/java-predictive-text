@@ -9,7 +9,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MarkovOne {
+public class MarkovOne implements IMarkovModel {
     private String myText;
     private Random myRandom;
 
