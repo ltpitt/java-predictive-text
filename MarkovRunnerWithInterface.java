@@ -9,16 +9,21 @@
 import edu.duke.*; 
 
 public class MarkovRunnerWithInterface {
+
     public void runModel(IMarkovModel markov, String text, int size) {
-        markov.setTraining(text);
+
+    	markov.setTraining(text);
         System.out.println("running with " + markov);
+
         for(int k=0; k < 3; k++){
 			String st= markov.getRandomText(size);
 			printOut(st);
 		}
+
     }
     
     public void runMarkov() {
+
         FileResource fr = new FileResource();
 		String st = fr.asString();
 		st = st.replace('\n', ' ');
@@ -39,9 +44,11 @@ public class MarkovRunnerWithInterface {
     }
 
 	private void printOut(String s){
+
 		String[] words = s.split("\\s+");
 		int psize = 0;
 		System.out.println("----------------------------------");
+
 		for(int k=0; k < words.length; k++){
 			System.out.print(words[k]+ " ");
 			psize += words[k].length() + 1;
@@ -50,7 +57,9 @@ public class MarkovRunnerWithInterface {
 				psize = 0;
 			}
 		}
+
 		System.out.println("\n----------------------------------");
+
 	}
 
 	public static void main(String[] args) {

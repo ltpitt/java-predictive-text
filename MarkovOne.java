@@ -9,9 +9,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class MarkovOne implements IMarkovModel {
-    private String myText;
-    private Random myRandom;
+public class MarkovOne extends AbstractMarkovModel {
 
     public MarkovOne() {
         myRandom = new Random();
@@ -23,23 +21,6 @@ public class MarkovOne implements IMarkovModel {
 
     public void setTraining(String s) {
         myText = s.trim();
-    }
-
-    public ArrayList<String> getFollows(String key) {
-
-        ArrayList<String> follows = new ArrayList<String>();
-
-        for (int i = 0; i < myText.length() - key.length(); i++) {
-
-            if (key.equals(myText.substring(i, i + key.length()))){
-                //System.out.println("Current key:\n" + key);
-                //System.out.println("Current substring:\n" + myText.substring(i + key.length(), i + key.length() + 1));
-                follows.add(myText.substring(i + key.length(), i + key.length() + 1));
-            }
-        }
-
-        return follows;
-
     }
 
     public String getRandomText(int numChars) {
