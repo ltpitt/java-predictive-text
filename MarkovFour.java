@@ -22,6 +22,8 @@ public class MarkovFour extends AbstractMarkovModel {
         myText = s.trim();
     }
 
+    public String toString() { return "MarkovModel of order 4";	}
+
     public String getRandomText(int numChars) {
         if (myText == null) {
             return "";

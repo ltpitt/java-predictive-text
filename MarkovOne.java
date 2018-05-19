@@ -23,6 +23,8 @@ public class MarkovOne extends AbstractMarkovModel {
         myText = s.trim();
     }
 
+    public String toString() { return "MarkovModel of order 1";	}
+
     public String getRandomText(int numChars) {
         if (myText == null) {
             return "";

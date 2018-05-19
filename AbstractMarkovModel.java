@@ -22,6 +22,7 @@ public abstract class AbstractMarkovModel implements IMarkovModel {
  
     abstract public String getRandomText(int numChars);
 
+
     protected ArrayList<String> getFollows(String key) {
 
         ArrayList<String> follows = new ArrayList<String>();

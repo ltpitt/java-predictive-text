@@ -21,6 +21,8 @@ public class MarkovZero extends AbstractMarkovModel {
 	public void setTraining(String s){
 		myText = s.trim();
 	}
+
+	public String toString() { return "MarkovModel of order 0";	}
 	
 	public String getRandomText(int numChars){
 		if (myText == null){
