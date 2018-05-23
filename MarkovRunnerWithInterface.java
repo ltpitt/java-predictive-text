@@ -10,7 +10,7 @@ import edu.duke.*;
 
 public class MarkovRunnerWithInterface {
 
-    public void runModel(IMarkovModel markov, String text, int size) {
+    public void runModel(IMarkovModel markov, String text, int size, int seed) {
 
     	markov.setTraining(text);
         System.out.println("running with " + markov);
@@ -28,18 +28,24 @@ public class MarkovRunnerWithInterface {
 		String st = fr.asString();
 		st = st.replace('\n', ' ');
 		int size = 200;
+		int seed = 30;
 		
         MarkovZero mz = new MarkovZero();
-        runModel(mz, st, size);
+        runModel(mz, st, size, seed);
     
         MarkovOne mOne = new MarkovOne();
-        runModel(mOne, st, size);
+        runModel(mOne, st, size, seed);
         
-        MarkovModel mThree = new MarkovModel(3);
-        runModel(mThree, st, size);
+        MarkovTwo mTwo = new MarkovTwo();
+        runModel(mTwo, st, size, seed);
+
+        //MarkovModel mThree = new MarkovModel(3);
+        //mThree.setRandom(seed);
+        //runModel(mThree, st, size, seed);
         
         MarkovFour mFour = new MarkovFour();
-        runModel(mFour, st, size);
+        mFour.setRandom(seed);
+        runModel(mFour, st, size, seed);
 
     }
 

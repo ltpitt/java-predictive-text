@@ -12,7 +12,6 @@ public class MarkovZero extends AbstractMarkovModel {
 
 	public MarkovZero() {
 		super(0);
-		myRandom = new Random();
 	}
 	
 	public void setRandom(int seed){
@@ -22,7 +21,7 @@ public class MarkovZero extends AbstractMarkovModel {
 	public void setTraining(String s){
 		myText = s.trim();
 	}
-	
+
 	public String getRandomText(int numChars){
 		if (myText == null){
 			return "";
@@ -32,7 +31,7 @@ public class MarkovZero extends AbstractMarkovModel {
 			int index = myRandom.nextInt(myText.length());
 			sb.append(myText.charAt(index));
 		}
-		
+
 		return sb.toString();
 	}
 

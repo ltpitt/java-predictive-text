@@ -12,7 +12,6 @@ public class MarkovFour extends AbstractMarkovModel {
 
     public MarkovFour() {
         super(4);
-        myRandom = new Random();
     }
 
     public void setRandom(int seed) {

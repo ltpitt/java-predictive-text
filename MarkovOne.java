@@ -13,7 +13,6 @@ public class MarkovOne extends AbstractMarkovModel {
 
     public MarkovOne() {
         super(1);
-        myRandom = new Random();
     }
 
     public void setRandom(int seed) {

@@ -70,13 +70,4 @@ public class MarkovModel implements IMarkovModel {
         return sb.toString();
     }
 
-    public static void main(String[] args) {
-        System.out.println("Working Directory = " +
-                System.getProperty("user.dir"));
-        MarkovTwo mo = new MarkovTwo();
-        mo.setTraining("saluti da davide");
-        String result = mo.getRandomText(5);
-        System.out.println(result);
-    }
-
 }

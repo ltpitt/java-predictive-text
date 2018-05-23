@@ -12,7 +12,6 @@ public class MarkovTwo extends AbstractMarkovModel {
 
     public MarkovTwo() {
         super(2);
-        myRandom = new Random();
     }
 
     public void setRandom(int seed) {

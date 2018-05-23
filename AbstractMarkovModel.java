@@ -1,4 +1,3 @@
-
 /**
  * Abstract class AbstractMarkovModel, implements MarkovModel
  * 
@@ -12,13 +11,19 @@ public abstract class AbstractMarkovModel implements IMarkovModel {
 
     protected String myText;
     protected Random myRandom;
+    protected int order;
 
-    public AbstractMarkovModel() {
+    public AbstractMarkovModel(int order) {
         myRandom = new Random();
+        this.order = order;
     }
 
     public void setRandom(int seed) {
         myRandom.setSeed(seed);
+    }
+
+    public String toString() {
+        return "MarkovModel of order " + order;
     }
 
     public void setTraining(String s) {
@@ -26,7 +31,6 @@ public abstract class AbstractMarkovModel implements IMarkovModel {
     }
 
     abstract public String getRandomText(int numChars);
-
 
     protected ArrayList<String> getFollows(String key) {
 
@@ -44,6 +48,5 @@ public abstract class AbstractMarkovModel implements IMarkovModel {
         return follows;
 
     }
-
 
 }
