@@ -11,6 +11,7 @@ import java.util.Random;
 public class MarkovFour extends AbstractMarkovModel {
 
     public MarkovFour() {
+        super(4);
         myRandom = new Random();
     }
 
@@ -21,8 +22,6 @@ public class MarkovFour extends AbstractMarkovModel {
     public void setTraining(String s) {
         myText = s.trim();
     }
-
-    public String toString() { return "MarkovModel of order 4";	}
 
     public String getRandomText(int numChars) {
         if (myText == null) {
@@ -45,15 +44,6 @@ public class MarkovFour extends AbstractMarkovModel {
         }
 
         return sb.toString();
-    }
-
-    public static void main(String[] args) {
-        System.out.println("Working Directory = " +
-                System.getProperty("user.dir"));
-        MarkovTwo mo = new MarkovTwo();
-        mo.setTraining("saluti da davide");
-        String result = mo.getRandomText(5);
-        System.out.println(result);
     }
 
 }

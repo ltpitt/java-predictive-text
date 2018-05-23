@@ -12,6 +12,7 @@ import java.util.Random;
 public class MarkovOne extends AbstractMarkovModel {
 
     public MarkovOne() {
+        super(1);
         myRandom = new Random();
     }
 
@@ -22,8 +23,6 @@ public class MarkovOne extends AbstractMarkovModel {
     public void setTraining(String s) {
         myText = s.trim();
     }
-
-    public String toString() { return "MarkovModel of order 1";	}
 
     public String getRandomText(int numChars) {
         if (myText == null) {
@@ -46,15 +45,6 @@ public class MarkovOne extends AbstractMarkovModel {
         }
 
         return sb.toString();
-    }
-
-    public static void main(String[] args) {
-        System.out.println("Working Directory = " +
-                System.getProperty("user.dir"));
-        MarkovOne mo = new MarkovOne();
-        mo.setTraining("saluti da davide");
-        String result = mo.getRandomText(5);
-        System.out.println(result);
     }
 
 }

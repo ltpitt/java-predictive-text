@@ -11,6 +11,7 @@ import java.util.Random;
 public class MarkovZero extends AbstractMarkovModel {
 
 	public MarkovZero() {
+		super(0);
 		myRandom = new Random();
 	}
 	
@@ -21,8 +22,6 @@ public class MarkovZero extends AbstractMarkovModel {
 	public void setTraining(String s){
 		myText = s.trim();
 	}
-
-	public String toString() { return "MarkovModel of order 0";	}
 	
 	public String getRandomText(int numChars){
 		if (myText == null){
@@ -35,11 +34,6 @@ public class MarkovZero extends AbstractMarkovModel {
 		}
 		
 		return sb.toString();
-	}
-
-	public static void main(String[] args) {
-		System.out.println("Working Directory = " +
-				System.getProperty("user.dir"));
 	}
 
 }
