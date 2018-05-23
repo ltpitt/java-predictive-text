@@ -9,21 +9,22 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class MarkovModel implements IMarkovModel {
+
     private String myText;
     private Random myRandom;
-    private int myLength;
+    private int myOrder;
 
-    public MarkovModel(int length) {
+    public MarkovModel(int order) {
         myRandom = new Random();
-        myLength = length;
+        myOrder = order;
     }
 
     public void setRandom(int seed) {
         myRandom = new Random(seed);
     }
 
-    public void setLength(int length) {
-        myLength = length;
+    public void setOrder(int order) {
+        myOrder = order;
     }
 
     public void setTraining(String s) {
@@ -52,11 +53,11 @@ public class MarkovModel implements IMarkovModel {
             return "";
         }
         StringBuilder sb = new StringBuilder();
-        int index = myRandom.nextInt(myText.length() - myLength);
-        String key = myText.substring(index, index + myLength);
+        int index = myRandom.nextInt(myText.length() - myOrder);
+        String key = myText.substring(index, index + myOrder);
         sb.append(key);
 
-        for (int k = 0; k < numChars - myLength; k++) {
+        for (int k = 0; k < numChars - myOrder; k++) {
             ArrayList<String> follows = getFollows(key);
             if (follows.size() == 0) {
                 break;

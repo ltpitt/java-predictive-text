@@ -35,7 +35,7 @@ public class MarkovRunnerWithInterface {
     
         MarkovOne mOne = new MarkovOne();
         runModel(mOne, st, size, seed);
-        
+
         MarkovTwo mTwo = new MarkovTwo();
         runModel(mTwo, st, size, seed);
 
